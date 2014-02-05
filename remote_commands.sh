@@ -12,8 +12,9 @@ echo vm.swappiness = 25 | sudo tee -a /etc/sysctl.conf
 chown root:root /swapfile 
 chmod 0600 /swapfile
 
-# install the domains plugin
+# install extra plugins
 # NOTE, don't run the domain commands while ssh'd in as root!
 git clone https://github.com/wmluke/dokku-domains-plugin.git /var/lib/dokku/plugins/domains-plugin
+git clone https://github.com/musicglue/dokku-user-env-compile.git /var/lib/dokku/plugins/user-env-compile
 dokku plugins-install
 
