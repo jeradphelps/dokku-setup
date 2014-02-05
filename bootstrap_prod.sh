@@ -26,7 +26,7 @@ KEY_FILE_LOCATION="/Users/username/.ssh/id_rsa.pub"
 
 # Execute our commands.  The remote_commands shell file gets executed on the remote server
 # and bootstraps dokku
-# ssh root@$REMOTE_IP_ADDRESS "sh" < remote_commands.sh
+ssh root@$REMOTE_IP_ADDRESS "sh" < remote_commands.sh
 
 # these commands are run locally.  They upload your key, set up your remotes and push your app.
 sh local_commands.sh $APPLICATION_ROOT $HOSTNAME $REMOTE_IP_ADDRESS $KEY_FILE_LOCATION
