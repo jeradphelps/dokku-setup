@@ -1,24 +1,17 @@
 
-# # send your key out to your server.
-# cat ~/.ssh/id_rsa.pub | ssh root@jeradphelps.com "sshcommand acl-add dokku jeradphelps"
+cd ~/Sites/me
 
-# # Add a remote
-# git remote rm jeradphelpsprod
-# git remote add jeradphelpsprod dokku@107.170.27.117:jeradphelps.com
+# send your key out to your server.
+cat ~/.ssh/id_rsa.pub | ssh root@jeradphelps.com "sshcommand acl-add dokku jeradphelps"
 
-# # Push it real good.
-# git push jeradphelpsprod master
+# Add a remote
+git remote rm jeradphelpsprod
+git remote add jeradphelpsprod dokku@107.170.27.117:jeradphelps.com
 
-# # set our domains using the domain plugin
-# # NOTE do not ssh to the server and run this as root.
-# ssh dokku@jeradphelps.com domains:set jeradphelps.com www.jeradphelps.com
+# Push it real good.
+git push jeradphelpsprod master
 
-echo "hi"
-echo "hi"
-echo "hi"
-echo "hi"
-echo "hi"
-echo "hi"
-echo "hi"
-echo "hi"
-echo "hi"
+# set our domains using the domain plugin
+# NOTE do not ssh to the server and run this as root.
+ssh dokku@jeradphelps.com domains:set jeradphelps.com www.jeradphelps.com
+

@@ -4,14 +4,12 @@
 
 # Using pty here so we can stream output
 require 'pty'
+require './bootstrap_prod_helpers'
 
 # execute these commands on the server to bootstrap our new box
-# cmd = "ssh root@jeradphelps.com sh < ./remote_commands.sh"
-# PTY.spawn( cmd ) do |stdin, stdout, pid|
-#   stdin.each { |line| print line }
-# end
+cmd = "ssh root@jeradphelps.com sh < ./remote_commands.sh"
+BootstrapProdHelpers.execute cmd
 
-# puts `sh ./local_commands.sh`
 cmd = "sh ./local_commands.sh"
 BootstrapProdHelpers.execute cmd
 
@@ -24,10 +22,3 @@ BootstrapProdHelpers.execute cmd
 
 
 
-class BootstrapProdHelpers
-  def self.execute cmd
-    PTY.spawn( cmd ) do |stdin, stdout, pid|
-      stdin.each { |line| print line }
-    end
-  end
-end
