@@ -1,4 +1,4 @@
-### Dokku Setup
+# Dokku Setup
 
 Configurable shell script for bootstrapping a rails app on dokku.
 
