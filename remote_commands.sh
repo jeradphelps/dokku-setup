@@ -17,4 +17,3 @@ chmod 0600 /swapfile
 git clone https://github.com/wmluke/dokku-domains-plugin.git /var/lib/dokku/plugins/domains-plugin
 dokku plugins-install
 
-
