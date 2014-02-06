@@ -17,3 +17,9 @@ put environment variables in a file called "my_configs", it might look like this
 
     export RACK_ENV=stage
     export RAILS_ENV=stage
+
+### To Run
+
+1. Replace the default values in bootstrap_prod.sh with your values.
+2. Add a "my_configs" file with your environment variables
+3. Run "sh bootstrap_prod.sh"
