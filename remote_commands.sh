@@ -42,3 +42,10 @@ git clone https://github.com/wmluke/dokku-domains-plugin.git /var/lib/dokku/plug
 git clone https://github.com/musicglue/dokku-user-env-compile.git /var/lib/dokku/plugins/user-env-compile
 dokku plugins-install
 
+
+
+# http://wiki.nginx.org/HttpCoreModule
+# see client_max_body_size config at link above.  Without setting this, nginx would block 
+# uploads of greater than the default, which is 1m
+sed -i 's/.*http {.*/&\n        client_max_body_size 0;/' /etc/nginx/nginx.conf
+
