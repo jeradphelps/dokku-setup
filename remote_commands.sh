@@ -10,7 +10,7 @@ echo "//////////////////////////////////////////"
 echo "//////////////////////////////////////////"
 echo "//////////////////////////////////////////"
 # we're getting stable branch, but using newer bootstrapper (it does the python software props)
-wget -qO- https://raw.github.com/progrium/dokku/master/bootstrap.sh | sudo DOKKU_TAG=v0.2.1 bash
+wget -qO- https://raw.github.com/progrium/dokku/master/bootstrap.sh | DOKKU_TAG=v0.2.1 bash
 
 
 echo "//////////////////////////////////////////"
@@ -24,8 +24,8 @@ dd if=/dev/zero of=/swapfile bs=1024 count=2048k
 mkswap /swapfile
 swapon /swapfile
 echo "/swapfile       none    swap    sw      0       0" >> /etc/fstab
-echo 0 | sudo tee /proc/sys/vm/swappiness
-echo vm.swappiness = 25 | sudo tee -a /etc/sysctl.conf
+echo 25 | tee /proc/sys/vm/swappiness
+echo vm.swappiness = 25 | tee -a /etc/sysctl.conf
 chown root:root /swapfile 
 chmod 0600 /swapfile
 
